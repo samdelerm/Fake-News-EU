@@ -116,9 +116,12 @@ const drawHorizontalBars = (canvas, chart) => {
   }
 
   const dpr = window.devicePixelRatio || 1;
-  const cssWidth = canvas.clientWidth || canvas.width;
-  const cssHeight = canvas.clientHeight || canvas.height;
+  const rect = canvas.getBoundingClientRect();
+  const cssWidth = Math.max(320, Math.floor(rect.width || canvas.width || 620));
+  const rows = chart.labels.length;
+  const cssHeight = Math.max(180, 56 + rows * 60);
 
+  canvas.style.height = `${cssHeight}px`;
   canvas.width = Math.floor(cssWidth * dpr);
   canvas.height = Math.floor(cssHeight * dpr);
   ctx.scale(dpr, dpr);
@@ -169,4 +172,8 @@ const renderCharts = () => {
 };
 
 renderCharts();
-window.addEventListener("resize", renderCharts);
+let chartResizeTimer = null;
+window.addEventListener("resize", () => {
+  clearTimeout(chartResizeTimer);
+  chartResizeTimer = setTimeout(renderCharts, 120);
+});
