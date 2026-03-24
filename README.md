@@ -2,6 +2,12 @@
 
 Site web statique sur la désinformation en Europe, prêt à être hébergé via GitHub Pages.
 
+## Nouveautés
+
+- 11 intox fréquentes sur l'UE, chacune confrontée à des faits vérifiables.
+- Section de graphiques (canvas) avec chiffres clés pour contredire les rumeurs.
+- Bibliographie renforcée vers des sources institutionnelles (UE, Eurostat, BCE, Cour des comptes, etc.).
+
 ## Contenu
 
 - [index.html](index.html) : structure et contenu éditorial

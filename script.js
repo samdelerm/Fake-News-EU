@@ -75,7 +75,7 @@ const CHARTS = [
   {
     id: "chartMigration",
     unit: "%",
-    max: 15,
+    max: 100,
     labels: ["Ressortissants non-UE dans la population de l'UE", "Part restante"],
     values: [6.1, 93.9],
   },
@@ -97,15 +97,15 @@ const CHARTS = [
     id: "chartTraditions",
     unit: "",
     max: 4000,
-    labels: ["Produits AOP/IGP/STG enregistres", "Objectif de reference"],
-    values: [3600, 4000],
+    labels: ["Produits AOP/IGP/STG enregistres"],
+    values: [3600],
   },
   {
     id: "chartCohesion",
     unit: " MdEUR",
     max: 450,
-    labels: ["Budget cohesion 2021-2027", "Reference comparative"],
-    values: [392, 450],
+    labels: ["Budget cohesion 2021-2027"],
+    values: [392],
   },
 ];
 
