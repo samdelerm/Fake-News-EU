@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake News Europe | Exposition interactive</title>
+    <meta
+      name="description"
+      content="Exposition complète sur les fake news en Europe: mécanismes, cas réels, chiffres, impacts et solutions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="europe-bg" aria-hidden="true"></div>
+
+    <header class="hero" id="top">
+      <nav class="top-nav">
+        <a class="brand" href="#top">Fake News Europe</a>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel">
+          Menu
+        </button>
+        <div class="menu-panel" id="menuPanel">
+          <a href="#definition">Comprendre</a>
+          <a href="#chiffres">Chiffres</a>
+          <a href="#cas">Cas réels</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#sources">Sources</a>
+        </div>
+      </nav>
+
+      <section class="hero-content">
+        <p class="kicker">Exposition numérique</p>
+        <h1>Les fake news en Europe</h1>
+        <p class="subtitle">
+          Une analyse complète, visuelle et documentée pour comprendre comment la désinformation se diffuse,
+          influence le débat public et comment y répondre collectivement.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#cas">Voir les cas réels</a>
+          <a class="btn ghost" href="#sources">Vérifier les sources</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section" id="definition">
+        <div class="section-title-wrap">
+          <h2>1. Qu'est-ce qu'une fake news?</h2>
+          <p>
+            Une fake news est une information fausse, trompeuse ou manipulée, diffusée pour influencer des
+            opinions, générer du trafic, ou semer la confusion.
+          </p>
+        </div>
+
+        <div class="grid three">
+          <article class="card">
+            <h3>Désinformation</h3>
+            <p>Contenu faux diffusé intentionnellement pour tromper.</p>
+          </article>
+          <article class="card">
+            <h3>Mésinformation</h3>
+            <p>Contenu faux partagé sans intention de nuire.</p>
+          </article>
+          <article class="card">
+            <h3>Information malveillante</h3>
+            <p>Contenu réel utilisé hors contexte pour nuire à une personne ou un groupe.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="chiffres">
+        <div class="section-title-wrap">
+          <h2>2. Chiffres clés en Europe</h2>
+          <p>Données publiques issues d'institutions européennes et d'observatoires spécialisés.</p>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <p class="stat-value" data-target="83">0</p>
+            <p class="stat-label">% d'Européens considéraient la désinformation comme un danger pour la démocratie (Eurobaromètre).</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value" data-target="17000">0</p>
+            <p class="stat-label">cas de désinformation pro-Kremlin documentés par EUvsDisinfo depuis 2015.</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-value" data-target="30">0</p>
+            <p class="stat-label">acteurs signataires (plus de 30) du Code européen de bonnes pratiques contre la désinformation.</p>
+          </article>
+        </div>
+
+        <div class="bars-wrap">
+          <h3>Types de contenus trompeurs observés (tendance qualitative en Europe)</h3>
+          <p class="bars-note">Illustration pédagogique basée sur les catégories les plus citées dans les rapports EDMO et fact-checkers européens.</p>
+          <div class="bar-item">
+            <span>Contexte manipulé</span>
+            <div class="bar"><i style="--w: 88%"></i></div>
+          </div>
+          <div class="bar-item">
+            <span>Fausse causalité</span>
+            <div class="bar"><i style="--w: 74%"></i></div>
+          </div>
+          <div class="bar-item">
+            <span>Contenu entièrement fabriqué</span>
+            <div class="bar"><i style="--w: 59%"></i></div>
+          </div>
+          <div class="bar-item">
+            <span>Deepfakes / IA générative</span>
+            <div class="bar"><i style="--w: 43%"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cas">
+        <div class="section-title-wrap">
+          <h2>3. Deux exemples de faits réels en Europe</h2>
+          <p>Ces cas montrent comment un récit trompeur peut migrer entre réseaux sociaux, médias et discours politiques.</p>
+        </div>
+
+        <div class="case-switch" role="tablist" aria-label="Etudes de cas">
+          <button class="case-btn active" data-case="case1" role="tab" aria-selected="true">Cas 1</button>
+          <button class="case-btn" data-case="case2" role="tab" aria-selected="false">Cas 2</button>
+        </div>
+
+        <article class="case-card active" id="case1" role="tabpanel">
+          <h3>Cas 1: Narratifs trompeurs autour du vol MH17 (2014 → aujourd'hui)</h3>
+          <p>
+            Après la destruction du vol MH17 au-dessus de l'Ukraine, de multiples versions contradictoires ont été diffusées
+            pour semer le doute sur les responsabilités.
+          </p>
+          <ul>
+            <li>Le tribunal néerlandais a condamné en 2022 trois accusés dans cette affaire.</li>
+            <li>Des récits alternatifs ont circulé durablement, malgré les enquêtes judiciaires et techniques.</li>
+            <li>EUvsDisinfo a recensé de nombreux exemples de réemploi de ce narratif dans la sphère informationnelle européenne.</li>
+          </ul>
+          <p class="impact">
+            <strong>Impact observé:</strong> érosion de la confiance dans les institutions, polarisation du débat et fatigue informationnelle.
+          </p>
+        </article>
+
+        <article class="case-card" id="case2" role="tabpanel" hidden>
+          <h3>Cas 2: Fake news « 5G = COVID-19 » (2020)</h3>
+          <p>
+            Pendant la pandémie, une rumeur virale a prétendu que les antennes 5G causaient ou propageaient le COVID-19.
+            Cette thèse a été massivement démentie par les autorités sanitaires et scientifiques.
+          </p>
+          <ul>
+            <li>Des attaques et actes de vandalisme contre des infrastructures télécom ont été signalés dans plusieurs pays européens.</li>
+            <li>Les fact-checkers européens ont publié des centaines d'articles de vérification liés au COVID.</li>
+            <li>L'OMS a qualifié ce phénomène d'« infodémie ».</li>
+          </ul>
+          <p class="impact">
+            <strong>Impact observé:</strong> risques pour la sécurité publique, désorganisation locale et renforcement de la défiance envers la science.
+          </p>
+        </article>
+      </section>
+
+      <section class="section" id="solutions">
+        <div class="section-title-wrap">
+          <h2>4. Comment répondre?</h2>
+          <p>La réponse est multi-niveaux: citoyens, écoles, médias, plateformes et institutions.</p>
+        </div>
+
+        <div class="timeline">
+          <article>
+            <h3>Citoyens</h3>
+            <p>Appliquer la règle des 3 vérifications: source, date, recoupement.</p>
+          </article>
+          <article>
+            <h3>Education</h3>
+            <p>Renforcer l'éducation aux médias dès le secondaire, avec des exercices de vérification concrets.</p>
+          </article>
+          <article>
+            <h3>Plateformes</h3>
+            <p>Transparence algorithmique, accès aux données de recherche, réponse rapide en période électorale.</p>
+          </article>
+          <article>
+            <h3>Institutions européennes</h3>
+            <p>Application du DSA, coopération transfrontalière et soutien au fact-checking indépendant.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="quiz">
+        <div class="section-title-wrap">
+          <h2>5. Mini test: repérer une fake news</h2>
+          <p>Réponds mentalement à ces questions avant de partager une information.</p>
+        </div>
+
+        <div class="grid two">
+          <article class="card checklist">
+            <h3>Checklist express</h3>
+            <ol>
+              <li>La source est-elle identifiable?</li>
+              <li>L'information est-elle confirmée par au moins 2 médias fiables?</li>
+              <li>Le titre est-il émotionnel ou sensationnaliste?</li>
+              <li>Des images inversées ont-elles été vérifiées?</li>
+              <li>Le contenu est-il récent et hors montage?</li>
+            </ol>
+          </article>
+          <article class="card answer-box">
+            <h3>Règle pratique</h3>
+            <p>
+              Si tu as un doute, ne partage pas tout de suite. Prends 2 minutes pour vérifier. Dans la lutte contre la
+              désinformation, la vitesse de vérification vaut mieux que la vitesse de diffusion.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="sources">
+        <div class="section-title-wrap">
+          <h2>6. Sources & méthode</h2>
+          <p>Les chiffres et cas ci-dessus s'appuient sur des rapports institutionnels et des décisions publiques.</p>
+        </div>
+
+        <div class="sources-list card">
+          <ul>
+            <li>
+              Commission européenne (Eurobaromètre, 2018):
+              <a href="https://ec.europa.eu/commission/presscorner/detail/en/IP_18_3370" target="_blank" rel="noopener noreferrer">
+                83% des citoyens considèrent les fake news comme un danger pour la démocratie
+              </a>.
+            </li>
+            <li>
+              Service européen d'action extérieure - EUvsDisinfo:
+              <a href="https://euvsdisinfo.eu/" target="_blank" rel="noopener noreferrer">
+                base de données de cas de désinformation pro-Kremlin
+              </a>.
+            </li>
+            <li>
+              EDMO (European Digital Media Observatory):
+              <a href="https://edmo.eu/" target="_blank" rel="noopener noreferrer">
+                rapports et analyses sur les tendances de désinformation
+              </a>.
+            </li>
+            <li>
+              Tribunal de district de La Haye (jugement MH17, 2022):
+              <a href="https://www.rechtspraak.nl/Organisatie-en-contact/Organisatie/Rechtbanken/Rechtbank-Den-Haag/Nieuws/Paginas/Judgment-Dutch-criminal-case-MH17.aspx" target="_blank" rel="noopener noreferrer">
+                décision et résumé officiel
+              </a>.
+            </li>
+            <li>
+              OMS: communication sur l'« infodémie » durant la pandémie de COVID-19:
+              <a href="https://www.who.int/health-topics/infodemic" target="_blank" rel="noopener noreferrer">
+                page thématique officielle
+              </a>.
+            </li>
+            <li>
+              Code de bonnes pratiques de l'UE contre la désinformation (mises à jour 2022+):
+              <a href="https://digital-strategy.ec.europa.eu/en/policies/code-practice-disinformation" target="_blank" rel="noopener noreferrer">
+                suivi institutionnel
+              </a>.
+            </li>
+          </ul>
+          <p class="method-note">
+            Note méthodologique: certains indicateurs évoluent chaque année. Le site privilégie des ordres de grandeur
+            robustes et des références publiques vérifiables.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Projet pédagogique Fake-News-EU • Design inspiré de l'identité visuelle européenne</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
