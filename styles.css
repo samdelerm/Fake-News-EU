@@ -279,52 +279,82 @@ main {
   --w: 60%;
 }
 
-.case-switch {
-  display: inline-flex;
-  gap: 0.45rem;
-  background: rgba(0, 51, 153, 0.08);
-  border-radius: 999px;
-  padding: 0.3rem;
+.myth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
-.case-btn {
-  border: 0;
-  background: transparent;
-  padding: 0.42rem 0.8rem;
-  border-radius: 999px;
-  cursor: pointer;
-  color: var(--eu-blue);
-  font-weight: 700;
+.myth-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(8, 28, 82, 0.08);
 }
 
-.case-btn.active {
-  background: var(--eu-blue);
-  color: #fff;
+.myth-card h3 {
+  font-size: 1rem;
+  line-height: 1.35;
 }
 
-.case-card {
-  margin-top: 0.9rem;
-  border-left: 5px solid var(--eu-gold);
-  padding: 1rem 1rem 1rem 1.15rem;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 12px;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: all 0.25s ease;
+.myth-fact {
+  margin: 0.6rem 0 0;
+  color: #253862;
+  line-height: 1.55;
 }
 
-.case-card.active {
-  opacity: 1;
-  transform: translateY(0);
+.chart-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
 }
 
-.case-card ul {
-  margin: 0.65rem 0;
-  padding-left: 1.1rem;
+.chart-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
 }
 
-.impact {
-  color: #102656;
+.chart-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+
+.chart-card canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(228, 237, 255, 0.45), rgba(255, 255, 255, 0.65));
+}
+
+.chart-note {
+  margin: 0.72rem 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.evidence-list {
+  margin-top: 1rem;
+}
+
+.evidence-list h3 {
+  margin-bottom: 0.55rem;
+}
+
+.evidence-list ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.evidence-list li {
+  margin: 0.3rem 0;
+  color: #1f315c;
+  line-height: 1.5;
 }
 
 .timeline {
@@ -385,7 +415,9 @@ main {
 @media (max-width: 960px) {
   .grid.three,
   .stats-grid,
-  .timeline {
+  .timeline,
+  .myth-grid,
+  .chart-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -424,7 +456,9 @@ main {
   .grid.two,
   .grid.three,
   .stats-grid,
-  .timeline {
+  .timeline,
+  .myth-grid,
+  .chart-grid {
     grid-template-columns: 1fr;
   }
 
