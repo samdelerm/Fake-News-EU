@@ -76,7 +76,7 @@ const CHARTS = [
     id: "chartMigration",
     unit: "%",
     max: 100,
-    labels: ["Ressortissants non-UE dans la population de l'UE", "Part restante"],
+    labels: ["Ressortissants non-UE", "Part restante"],
     values: [6.1, 93.9],
   },
   {
