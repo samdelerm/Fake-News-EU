@@ -69,7 +69,7 @@ const CHARTS = [
     id: "chartLanguages",
     unit: "",
     max: 80,
-    labels: ["Langues officielles UE", "Langues regionales/minoritaires (Europe)"],
+    labels: ["Langues officielles UE", "Langues minoritaires "],
     values: [24, 60],
   },
   {
@@ -83,7 +83,7 @@ const CHARTS = [
     id: "chartBudget",
     unit: "%",
     max: 60,
-    labels: ["Budget UE / RNB UE", "Depenses publiques totales / PIB (UE)"],
+    labels: ["Budget UE / RNB UE", "Depenses publiques / PIB (UE)"],
     values: [1.15, 49.5],
   },
   {
@@ -97,14 +97,14 @@ const CHARTS = [
     id: "chartTraditions",
     unit: "",
     max: 4000,
-    labels: ["Produits AOP/IGP/STG enregistres"],
+    labels: ["Produits AOP/IGP/STG"],
     values: [3750],
   },
   {
     id: "chartCohesion",
     unit: " MdEUR",
     max: 450,
-    labels: ["Budget cohesion 2021-2027 (engagements)"],
+    labels: ["Budget cohesion 2021-2027"],
     values: [410],
   },
 ];
