@@ -119,8 +119,13 @@ const drawHorizontalBars = (canvas, chart) => {
   const rect = canvas.getBoundingClientRect();
   const cssWidth = Math.max(320, Math.floor(rect.width || canvas.width || 620));
   const rows = chart.labels.length;
-  const cssHeight = Math.max(180, 56 + rows * 60);
+  
+  // Calcul amélioré de la hauteur
+  const barHeight = 44;
+  const rowGap = 28;
+  const cssHeight = Math.max(220, 70 + rows * (barHeight + rowGap));
 
+  canvas.style.width = `${cssWidth}px`;
   canvas.style.height = `${cssHeight}px`;
   canvas.width = Math.floor(cssWidth * dpr);
   canvas.height = Math.floor(cssHeight * dpr);
@@ -128,12 +133,12 @@ const drawHorizontalBars = (canvas, chart) => {
 
   ctx.clearRect(0, 0, cssWidth, cssHeight);
 
-  const pad = { top: 26, right: 20, bottom: 24, left: 210 };
+  // Padding adaptatif pour les longs labels
+  const pad = { top: 32, right: 24, bottom: 28, left: 240 };
   const chartWidth = cssWidth - pad.left - pad.right;
-  const rowGap = 24;
-  const barHeight = 36;
 
-  ctx.font = "600 14px Space Grotesk, sans-serif";
+  // Configuration du texte avec meilleure lisibilité
+  ctx.font = "600 13px Space Grotesk, sans-serif";
   ctx.textBaseline = "middle";
 
   chart.labels.forEach((label, idx) => {
@@ -142,22 +147,42 @@ const drawHorizontalBars = (canvas, chart) => {
     const ratio = Math.max(0, Math.min(1, value / chart.max));
     const barW = chartWidth * ratio;
 
+    // Texte du label avec troncature si nécessaire
     ctx.fillStyle = "#193f9f";
-    ctx.fillText(label, 16, y + barHeight / 2);
+    let displayLabel = label;
+    const maxLabelWidth = pad.left - 28;
+    
+    // Troncature du texte s'il est trop long
+    while (ctx.measureText(displayLabel).width > maxLabelWidth && displayLabel.length > 0) {
+      displayLabel = displayLabel.substring(0, displayLabel.length - 1);
+    }
+    if (label.length !== displayLabel.length) {
+      displayLabel = displayLabel.substring(0, Math.max(0, displayLabel.length - 3)) + "...";
+    }
+    
+    ctx.fillText(displayLabel, 16, y + barHeight / 2);
 
+    // Fond de la barre
     ctx.fillStyle = "rgba(25, 63, 159, 0.12)";
     ctx.fillRect(pad.left, y, chartWidth, barHeight);
 
+    // Barre avec gradient
     const grad = ctx.createLinearGradient(pad.left, y, pad.left + barW, y + barHeight);
     grad.addColorStop(0, "#2458d6");
     grad.addColorStop(1, "#ffcc00");
     ctx.fillStyle = grad;
     ctx.fillRect(pad.left, y, barW, barHeight);
 
+    // Valeur numérique avec meilleur positionnement
     ctx.fillStyle = "#0f1a3a";
+    ctx.font = "600 13px Space Grotesk, sans-serif";
     const suffix = chart.unit || "";
     const valueLabel = Number.isInteger(value) ? `${value}${suffix}` : `${value.toFixed(1)}${suffix}`;
-    ctx.fillText(valueLabel, pad.left + Math.min(barW + 10, chartWidth - 56), y + barHeight / 2);
+    
+    const textWidth = ctx.measureText(valueLabel).width;
+    const textX = Math.max(pad.left + 12, Math.min(pad.left + barW + 12, cssWidth - pad.right - textWidth - 8));
+    
+    ctx.fillText(valueLabel, textX, y + barHeight / 2);
   });
 };
 
